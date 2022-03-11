@@ -13,18 +13,16 @@
     <div class="col-md-4">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Producto" class="control-label"></label>
-                <input asp-for="Producto" class="form-control" />
+            <div class="input-group mb-3">
+                <input asp-for="Producto" maxlength="150" class="form-control" placeholder="Nombre del producto"/>
                 <span asp-validation-for="Producto" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="Descripcion" class="control-label"></label>
-                <input asp-for="Descripcion" class="form-control" />
+            <div class="input-group mb-3">
+                <input asp-for="Descripcion" maxlength="500" class="form-control" placeholder="Descripción del producto"/>
                 <span asp-validation-for="Descripcion" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="Valor" class="control-label"></label>
+            <div class="input-group mb-3">
+                <span class="input-group-text">$</span>
                 <input asp-for="Valor" class="form-control" />
                 <span asp-validation-for="Valor" class="text-danger"></span>
             </div>
@@ -34,7 +32,6 @@
         </form>
     </div>
 </div>
-|
 <div>
     <a asp-action="Index" class="btn btn-outline-secondary">Cancelar</a>
 </div>
