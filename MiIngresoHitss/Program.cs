@@ -1,6 +1,5 @@
 using Microsoft.EntityFrameworkCore;
 using MiIngresoHitss.Context;
-using MiIngresoHitss.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,7 +9,6 @@ builder.Services.AddDbContext<MVCcontext>(options =>
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("testConnection"));
 });
-builder.Services.AddScoped<IProductoService,ProductoService>();
 
 var app = builder.Build();
 
