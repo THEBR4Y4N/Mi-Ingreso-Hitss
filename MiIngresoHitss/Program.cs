@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using MiIngresoHitss.Context;
+using System.Globalization;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -19,6 +20,17 @@ if (!app.Environment.IsDevelopment())
     // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
+
+app.UseDeveloperExceptionPage();
+
+var culture = new[] { new CultureInfo("es-CO") };
+app.UseRequestLocalization(new RequestLocalizationOptions
+{
+    DefaultRequestCulture = new Microsoft.AspNetCore.Localization.RequestCulture(culture[0]),
+    SupportedCultures = culture,
+    SupportedUICultures = culture,
+});
+
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
